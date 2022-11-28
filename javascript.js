@@ -18,25 +18,17 @@ function getComputerchoice(array){
     return choice;
 }
 
-
-
-
-
-
-
-
 //Create a method to receive inputs from player
 function getPlayerchoice(array){
     let valid = false;
-    let choice;
+    let choice, check;
     //Create method to validate inputs from player
     while (valid === false){
-        choice = prompt('what is your hand:').toLowerCase();
-        valid = array.includes(choice);
-        console.log(valid);
-    
+        choice = prompt('what is your hand:');
+        check = choice.toLowerCase();
+        valid = array.includes(check);
     }
-    console.log(choice);
+    console.log(check);
     return choice;
    
 }
@@ -113,7 +105,9 @@ function startGame(){
         for (let i = 0; i <5 ; i++){
             //get choice and compare
             let bot = getComputerchoice(results);
+            console.log(bot);
             let user = getPlayerchoice(results);
+            console.log(user);
             let winner = compareChoice(bot, user);
             //keep track of winner
             if (winner == 'user'){
