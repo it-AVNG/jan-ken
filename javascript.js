@@ -27,38 +27,39 @@ function getComputerchoice(array){
 
 //Create a method to receive inputs from player
 function getPlayerchoice(array){
-let valid = false;
-let choice;
-//Create method to validate inputs from player
-while (valid === false){
-    choice = prompt('what is your hand:').toLowerCase();
-    valid = array.includes(choice);
+    let valid = false;
+    let choice;
+    //Create method to validate inputs from player
+    while (valid === false){
+        choice = prompt('what is your hand:').toLowerCase();
+        valid = array.includes(choice);
+        console.log(valid);
+    
+    }
+    console.log(choice);
+    return choice;
+   
 }
-return choice;
-}
-
-
-
-
-
-
-
 
 
 //Create a function to compare inputs from player and computer choice
 function compareChoice(a,b){
+    let msg;
     switch (a){
         case "rock":
             switch (b){
                 case "rock": 
-                    alert('It is a tie')
+                    msg = `User plays: ${a}, bot plays: ${b} It is tie`;
+                    alert(msg);
                     return;
                 case "paper":
-                    alert('User wins')
+                    msg = `User plays: ${a}, bot plays: ${b} User Wins`;
+                    alert(msg);
                     return "user";
 
                 case "scissors":
-                    alert('Bot wins')
+                    msg = `User plays: ${a}, bot plays: ${b} Bot Wins`;
+                    alert(msg)
                     return "bot";
 
             }    
@@ -66,28 +67,34 @@ function compareChoice(a,b){
         case "paper":
             switch (b){
                 case "rock": 
-                    alert('Bot wins')
+                    msg = `User plays: ${a}, bot plays: ${b} Bot Wins`;
+                    alert(msg)
                     return "bot";
                 case "paper":
-                    alert('It is a tie')
+                    msg = `User plays: ${a}, bot plays: ${b} It is tie`;
+                    alert(msg);
                     return ;
 
                 case "scissors":
-                    alert('User wins')
+                    msg = `User plays: ${a}, bot plays: ${b} User Wins`;
+                    alert(msg);
                     return "user";
             }    
 
         case "scissors":
             switch (b){
                 case "rock": 
-                    alert('User wins')
+                    msg = `User plays: ${a}, bot plays: ${b} User Wins`;
+                    alert(msg);
                     return "user";
                 case "paper":
-                    alert('bot wins')
+                    msg = `User plays: ${a}, bot plays: ${b} Bot Wins`;
+                    alert(msg)
                     return "bot";
 
                 case "scissors":
-                    alert('it is a tie')
+                    msg = `User plays: ${a}, bot plays: ${b} It is tie`;
+                    alert(msg);
                     return ;
             }    
 
@@ -117,13 +124,14 @@ function startGame(){
             //winner determine
 
         }
+
         if (u >=3){ 
-            alert('user wins game');
+            alert(`Tally user: ${u}, bot: ${b} user wins game`);
             
         } else if( b>= 3){
-            alert('bot wins game');
+            alert(`Tally user: ${u}, bot: ${b} bot wins game`);
             
-        } else {alert('it is a Tie game');}
+        } else {alert(`Tally user: ${u}, bot: ${b} it is a Tie game`);}
 
         //Create a method to continue or stop
         answer = prompt('replay? (y/n)');
@@ -147,7 +155,7 @@ function validate(input){
 //validarte the input case insentivity
 
 answer = validate(answer);
-let results =['rock','paper', 'scissors'];
+let results =['rock','paper','scissors'];
 //If y --> Start the game 
 startGame();
 
