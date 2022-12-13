@@ -17,41 +17,44 @@ function compare(u,b){
 
 switch (u) {
   case "rock": 
-    alert (`user play rock bot play ${b}`);
+    console.log(`user play rock bot play ${b}`);
     if (b == u) {
-      alert ('it is a tie');
+      console.log('it is a tie');
       return 'tie';
     } else if (b == 'paper') {
-      alert ('bot wins');
+      console.log ('bot wins');
       return 'bot';
     } else {
-      alert('user wins');
+      console.log('user wins');
       return 'user';
     }
     
   case "paper": 
-    alert (`user play paper bot play ${b}`);
+    console.log (`user play paper bot play ${b}`);
     if (b == u) {
-      alert ('it is a tie');
+      console.log ('it is a tie');
       return 'tie';
     } else if (b == 'scissors') {
-      alert ('bot wins');
+      console.log ('bot wins');
       return 'bot';
     } else {
-      alert('user wins');
+      console.log('user wins');
       return 'user';
     }
     return;
   case "scissors": 
-    alert (`user play scissors bot play ${b}`);
+    console.log (`user play scissors bot play ${b}`);
     if (b == u) {
-      alert ('it is a tie');
+      console.log ('it is a tie');
+      return 'tie';
     } else if (b == 'rock') {
-      alert ('bot wins');
+      console.log ('bot wins');
+      return 'bot';
     } else {
-      alert('user wins');
+      console.log('user wins');
+      return 'user';
     }
-    return;
+  
 }
 
 }
@@ -75,6 +78,8 @@ function getComputer(array){
 
 
 var hand =['rock','paper','scissors'];
+
+//
 var userChoice = prompt('what is yout hand').toLowerCase();
 var botChoice = getComputer(hand);
 var winner = compare(userChoice,botChoice);
