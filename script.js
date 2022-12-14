@@ -64,11 +64,6 @@ function getComputer(array){
   let choice = array[i]; 
   return choice;
 }
-//trigger the bot selection
-function getbot(){
-  var botChoice = getComputer(hand);
-  var winner = compare(playerSelection,botChoice);
-}
 
 //create playerSelection global variable
 var playerSelection
@@ -77,7 +72,10 @@ const playRound = document.querySelector("#hand-container");
 playRound.addEventListener("click",
 function(e){
   playerSelection= `` + e.target.getAttribute('id');
-  getbot();
+  //trigger game, the bot selection
+  var botChoice = getComputer(hand);
+  //check for winner
+  var winner = compare(playerSelection,botChoice);
 });
 
 
